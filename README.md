@@ -22,5 +22,26 @@ colcon build --symlink-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 参考サイト
 [dynamixel_hardware](https://github.com/dynamixel-community/dynamixel_hardware/tree/humble)
 
-# 使用方法
 
+GPT-4のAPIキーを取得し、main.pyに入力する。
+```main.py
+class Task(Node):
+    def __init__(self):
+        super().__init__('PD3_mani') 
+
+        #gptAPIキーを設定する
+        openai.api_key = "<gptAPIキー>"
+```
+
+# 使用方法
+- Terminal1
+```
+ros2 launch open_manipulator_description open_manipulator_x.launch.py
+```
+
+- Terminal2
+```
+ros2 run trajectory_generation trajectory_generation
+```
+Enter a command:\
+に対して指示文を入力する。
